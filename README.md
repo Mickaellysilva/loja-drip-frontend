@@ -1,102 +1,198 @@
-## Drip Store - Frontend
-E-commerce moderno de moda e acessórios desenvolvido com React e Vite, oferecendo uma experiência de compra fluida e intuitiva.
+# 🛍️ Digital Store
 
-## Deploy
-A aplicação está disponível online através do Vercel:
+Projeto de uma loja virtual desenvolvido com **React.js**, com foco em componentização, organização e boas práticas de front-end.
 
-Ambiente	Link
-Produção	loja-drip-frontend-ojuh.vercel.app
-💡 Acesse diretamente pelo navegador para explorar todas as funcionalidades do e-commerce.
+---
 
-## Funcionalidades
-Catálogo de produtos com grid responsivo
+## Sobre o Projeto
 
-Filtros por categoria (Camisetas, Calças, Bonés, Headphones, Tênis)
+A **Digital Store** é uma aplicação web que simula uma loja virtual completa, permitindo:
 
-Carrinho de compras com gerenciamento de itens
+- Visualização de produtos  
+- Filtro e ordenação  
+- Página de detalhes do produto  
+- Interface moderna e responsiva  
+- Navegação entre páginas  
 
-Página de detalhes do produto com galeria de imagens e seleção de tamanho/cor
-
-Carrossel animado na página inicial
-
-Sistema de busca de produtos
-
-Área de cadastro e login de usuários
-
-Página de pedidos com resumo do carrinho
-
-Design responsivo adaptado para mobile, tablet e desktop
 
 ## Tecnologias Utilizadas
-Tecnologia	Descrição
-React 19	Biblioteca para construção da interface
-Vite	Build tool e dev server rápido
-React Router DOM	Gerenciamento de rotas
-Tailwind CSS	Estilização utilitária
-React Icons	Conjunto de ícones
-Axios	Requisições HTTP (para integração futura com backend)
-Vercel	Plataforma de deploy e hospedagem
-📁 Estrutura do Projeto
-text
+
+- React.js  
+- React Router DOM  
+- JavaScript (ES6+)  
+- HTML5  
+- CSS3  
+
+## Estrutura de Pastas
+
+```text
 src/
-├── assets/          # Imagens e ícones locais
-├── components/      # Componentes reutilizáveis
-│   ├── AbaProdutos/
-│   ├── HomePage/
+├── components/         
+│   ├── AbaProdutos/    
+│   ├── HomePage/        
 │   └── ...
-├── contexts/        # Contextos React (Carrinho)
-├── data/            # Dados mockados dos produtos
-├── pages/           # Páginas da aplicação
-├── services/        # Configuração de API
-├── App.jsx          # Componente principal
-├── main.jsx         # Ponto de entrada
-└── index.css        # Estilos globais
+├── pages/              
+│   ├── homePage.jsx
+│   ├── productListingPage.jsx
+│   ├── productViewPage.jsx
+│   ├── login.jsx
+│   └── ...
+├── data/               
+├── contexts/           
+├── assets/              
+├── App.jsx              
+└── main.jsx            
 
-## Como Executar o Projeto
-Pré-requisitos
-Node.js (versão 18 ou superior)
+```
+## Paleta de Cores
 
-npm ou yarn
+### Cores principais
 
-Passos
-Clone o repositório
+- Primary: `#C92071`  
+- Secondary: `#B5B6F2`  
+- Tertiary: `#991956`  
 
-bash
-git clone https://github.com/tatianadev2207/loja-drip-frontend.git
-cd loja-drip-frontend
-Instale as dependências
+### Feedback
 
-bash
+- Error: `#EE4266`  
+- Success: `#52CA76`  
+- Warning: `#F6AA1C`  
+
+### Escala de Cinza
+
+- Dark Gray: `#1F1F1F`  
+- Dark Gray 2: `#474747`  
+- Dark Gray 3: `#666666`  
+- Light Gray: `#8F8F8F`  
+- Light Gray 2: `#CCCCCC`  
+- Light Gray 3: `#F5F5F5`  
+- White: `#FFFFFF`  
+
+
+## Componentes
+
+### Layout
+Responsável por estruturar as páginas com:
+
+- `<Header />`
+- Conteúdo (`children`)
+- `<Footer />`
+
+### Header
+- Logo  
+- Campo de busca  
+- Login / Cadastro  
+- Carrinho  
+- Navegação principal  
+
+### Footer
+- Logo  
+- Descrição  
+- Redes sociais  
+- Links dinâmicos  
+- Direitos autorais  
+
+### Section
+Componente reutilizável com:
+- Título  
+- Alinhamento  
+- Link opcional  
+- Conteúdo dinâmico  
+
+### ProductCard
+Exibe:
+- Imagem  
+- Nome  
+- Preço  
+- Desconto  
+
+### ProductListing
+Lista vários produtos usando `<ProductCard />`
+
+### Gallery
+Carrossel com:
+- Navegação por setas  
+- Miniaturas (opcional)  
+- Slides interativos  
+
+### FilterGroup
+- Checkbox ou radio  
+- Renderização dinâmica  
+
+### BuyBox
+- Nome  
+- Preço  
+- Avaliações  
+- Descrição  
+- Botão de compra  
+
+### ProductOptions
+- Seleção de cores  
+- Seleção de tamanhos  
+
+## Páginas
+
+### Home (`/`)
+- Banner (Gallery)  
+- Coleções  
+- Produtos em alta  
+
+### Produtos (`/products`)
+- Listagem  
+- Filtros  
+- Ordenação  
+
+### Produto (`/product/:id`)
+- Galeria  
+- Informações  
+- Opções  
+- Produtos recomendados  
+
+### Funcionalidades
+
+- Busca de produtos  
+- Filtros  
+- Ordenação  
+- Galeria interativa  
+- Página detalhada  
+- Navegação com rotas  
+
+## Como Executar
+
+### 1. Clonar repositório
+```bash
+git clone https://github.com/seu-usuario/digital-store.git
+```
+```bash
+2. Entrar na pasta
+cd digital-store
+```
+```bash
+3. Instalar dependências
 npm install
-Execute o servidor de desenvolvimento
+```
+```bash
+4. Rodar projeto
+npm start
+```
 
-bash
-npm run dev
-Acesse no navegador
-text
-http://localhost:5173
-📜 Scripts Disponíveis
-Comando	Descrição
-npm run dev	Inicia o servidor de desenvolvimento
-npm run build	Gera a build de produção
-npm run preview	Visualiza a build localmente
-npm run lint	Executa o ESLint
+### Rotas
+/ → Home
+/products → Listagem
+/product/:id → Detalhes
 
-## Capturas de Tela
-Página Inicial	Detalhes do Produto	Carrinho
-Carrossel com ofertas	Galeria de imagens	Resumo de itens
-Categorias em destaque	Seleção de tamanho/cor	Finalização de pedido
-Produtos recomendados	Botão de adicionar	Simulação de pagamento
+## Boas Práticas
+* Componentização
+* Reutilização
+* Código organizado
+* Estrutura escalável
+  
+### Imagens
 
-## Melhorias Recentes
-✅ Adicionado efeito cursor: pointer em todos os botões e links
-✅ Implementado carrossel com transição suave
-✅ Substituídas imagens externas quebradas por imagens locais
-✅ Corrigido layout responsivo
-✅ Melhorada acessibilidade visual
-✅ Realizado deploy na Vercel com integração contínua
+Localizadas em:
+public/
+src/assets/
 
-## Desenvolvido por as desenvolvedoras
-Tatiana dos Santos Lima
-Mickaelly da Silva Costa
-Kássia Moreira Santos
+### Autores
+Realizamos nosso projeto junto com a Nazaré Almeida.
+Grupo: Tatiana dos Santos Lima, Mickaelly da Silva Costa e Kassia Moreira Santos.
